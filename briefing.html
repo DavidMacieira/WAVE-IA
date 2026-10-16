@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Prepare o seu briefing com a Wave AI." />
+    <title>O meu briefing | Wave AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="briefing-page">
+    <div class="page-wave wave-one" aria-hidden="true"></div><div class="page-wave wave-two" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Voltar ao início Wave Studio"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>WAVE<span>STUDIO</span></span></a>
+      <button class="text-button" id="restart-button" type="button">Recomeçar</button>
+    </header>
+    <main>
+      <section class="screen service-screen" id="services" aria-labelledby="services-title">
+        <div class="phone-stage">
+          <div class="phone-intro"><p class="eyebrow">WAVE AI NO SEU BOLSO</p><h1 id="services-title">Como uma conversa que começa bem.</h1><p>A escolha é sua. A Wave AI adapta as perguntas ao que precisa.</p><a class="back-button" href="index.html">← Voltar ao início</a></div>
+          <div class="iphone phone-reveal">
+            <div class="iphone-top"><span>9:41</span><i class="dynamic-island"></i><span class="signal">◔ ◒</span></div>
+            <div class="iphone-screen service-phone-screen">
+              <div class="phone-contact"><a class="phone-back" href="index.html" aria-label="Voltar">‹</a><img class="wave-avatar logo-avatar" src="assets/wave-studio-logo.png" alt="Wave Studio" /><div><b>Wave Studio</b><small>online agora</small></div></div>
+              <div class="phone-conversation"><div class="phone-bubble received">Olá! Antes de começarmos, diga-me: em que podemos ajudar?</div><p class="phone-hint">Pode escolher mais do que uma opção.</p></div>
+              <div class="service-grid" id="service-grid">
+                <button class="service-card" data-service="Website" type="button"><span class="service-icon">⌘</span><b>Website</b><i class="check">✓</i></button>
+                <button class="service-card" data-service="Redes sociais" type="button"><span class="service-icon">◌</span><b>Redes sociais</b><i class="check">✓</i></button>
+                <button class="service-card" data-service="Fotografia" type="button"><span class="service-icon">◉</span><b>Fotografia</b><i class="check">✓</i></button>
+                <button class="service-card" data-service="Vídeo" type="button"><span class="service-icon">▷</span><b>Vídeo</b><i class="check">✓</i></button>
+                <button class="service-card explore-card" data-service="Ainda estou a explorar" type="button"><span class="service-icon">✦</span><b>Ainda estou a explorar</b><i class="check">✓</i></button>
+              </div>
+              <button class="phone-continue" id="service-next" type="button" disabled onclick="window.location.assign('chat.html')">Continuar <span>↑</span></button>
+            </div>
+            <div class="iphone-home"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen chat-screen" id="chat" aria-labelledby="chat-title" hidden>
+        <div class="phone-stage chat-stage">
+          <div class="phone-intro"><p class="eyebrow">O SEU BRIEFING</p><h1 id="chat-title">Vamos transformar isto em algo concreto.</h1><p>Responda naturalmente. Pode escrever pouco ou muito, como numa mensagem normal.</p><div class="progress"><span class="progress-label" id="chat-progress-label">Pergunta 1 de 4</span><span class="progress-line"><i id="chat-progress"></i></span></div><button class="back-button" data-back="services" type="button">← Alterar serviços</button></div>
+          <div class="iphone iphone-chat phone-reveal">
+            <div class="iphone-top"><span>9:41</span><i class="dynamic-island"></i><span class="signal">◔ ◒</span></div>
+            <div class="iphone-screen chat-panel">
+              <div class="phone-contact"><button class="phone-back" data-back="services" type="button" aria-label="Voltar">‹</button><img class="wave-avatar logo-avatar" src="assets/wave-studio-logo.png" alt="Wave Studio" /><div><b>Wave Studio</b><small>online agora</small></div><span class="contact-dots">•••</span></div>
+              <div class="chat-messages" id="chat-messages" aria-live="polite"></div><div class="quick-options" id="quick-options"></div>
+              <form class="composer" id="composer"><label class="sr-only" for="answer-input">A sua resposta</label><input id="answer-input" autocomplete="off" placeholder="Mensagem" /><button type="submit" aria-label="Enviar resposta">↑</button></form>
+              <button class="skip-button" id="skip-button" type="button">Saltar esta pergunta</button>
+            </div>
+            <div class="iphone-home"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen summary-screen" id="summary" aria-labelledby="summary-title" hidden><div class="summary-container"><p class="eyebrow">QUASE PRONTO</p><h1 id="summary-title">Este é o seu ponto de partida.</h1><p class="intro">Reveja o resumo. Pode editar qualquer detalhe antes de avançar.</p><div class="brief-card" id="brief-card"></div><div class="step-actions"><button class="back-button" data-back="chat" type="button">← Voltar à conversa</button><button class="primary-button" id="prepare-button" type="button">Preparar mensagem <span aria-hidden="true">→</span></button></div></div></section>
+      <section class="screen whatsapp-screen" id="whatsapp" aria-labelledby="whatsapp-title" hidden><div class="whatsapp-container"><div class="whatsapp-icon" aria-hidden="true">⌁</div><p class="eyebrow">PRONTO PARA ENVIAR</p><h1 id="whatsapp-title">A sua mensagem está preparada.</h1><p class="intro">Vamos abrir o WhatsApp com esta mensagem. Pode alterá-la antes de enviar.</p><div class="message-preview" id="message-preview"></div><button class="primary-button whatsapp-button" id="whatsapp-button" type="button">Abrir no WhatsApp <span aria-hidden="true">↗</span></button><button class="copy-button" id="copy-button" type="button">Copiar mensagem</button><p class="small-print" id="whatsapp-note">A mensagem só será enviada quando carregar em enviar no WhatsApp.</p><button class="back-button" data-back="summary" type="button">← Voltar ao resumo</button></div></section>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <footer><span>© Wave Studio</span><button type="button" id="privacy-button">Privacidade</button></footer>
+    <dialog id="privacy-dialog"><button class="dialog-close" type="button" aria-label="Fechar">×</button><p class="eyebrow">PRIVACIDADE</p><h2>O seu briefing, com respeito.</h2><p>Esta demo guarda o rascunho apenas no seu dispositivo. Numa versão publicada, a Wave Studio deve disponibilizar a política de privacidade completa, a finalidade do tratamento e os contactos para pedidos sobre dados pessoais.</p></dialog>
+    <script src="briefing.js"></script>
+  </body>
+</html>
